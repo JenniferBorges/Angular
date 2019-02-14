@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { ShareModuleModule } from '../share/share.module';
+import { SharedModuleModule } from '../shared/shared.module';
+import { ContatoComponent } from './contato.component';
+import { ContatoRoutingModule } from './contato-routing.module';
+import { ContatoComponentService } from './contato.component.service';
 
 @NgModule({
   imports: [
-    ShareModuleModule,
+    SharedModuleModule, ContatoRoutingModule
   ],
-  declarations: []
+  declarations: [ ContatoComponent ],
+  providers: [ ContatoComponentService ]
 })
-export class ContatoModule { }
+export class ContatoModule {
+}

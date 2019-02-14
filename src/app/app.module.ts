@@ -1,25 +1,33 @@
-import { Http } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
-import { GiphySearchManualComponentModule } from './giphy/giphy-search-manual/giphy-search-manual.module';
+import { GiphyService } from './giphy/giphy.service';
+import { SharedModuleModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { GiphyModule } from './giphy/giphy.module';
+import { ContatoModule } from './contato/contato.module';
+import { PageNotFoundModule } from './pagenotfound/pagenotfound.modules';
+import { InicioModule } from './inicio/inicio.module';
+import { ClienteModule } from './cliente/cliente.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
     AppRoutingModule,
-    GiphySearchManualComponentModule
+
+    InicioModule,
+    GiphyModule,
+    ContatoModule,
+    SharedModuleModule,
+    ClienteModule,
+
+    PageNotFoundModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ GiphyService ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+}
